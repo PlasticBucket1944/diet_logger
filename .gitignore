@@ -34,3 +34,6 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# developer add text
+/config/database.yml
