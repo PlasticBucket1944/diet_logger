@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_27_101040) do
+ActiveRecord::Schema.define(version: 2021_11_01_104030) do
+
+  create_table "calorie_intakes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "user_id", null: false, comment: "ユーザーID"
+    t.string "name", limit: 40, null: false, comment: "摂取物名"
+    t.date "date", null: false, comment: "摂取日"
+    t.bigint "amount", null: false, comment: "摂取カロリー量"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["date"], name: "index_calorie_intakes_on_date"
+    t.index ["user_id"], name: "index_calorie_intakes_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +37,5 @@ ActiveRecord::Schema.define(version: 2021_10_27_101040) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "calorie_intakes", "users"
 end
