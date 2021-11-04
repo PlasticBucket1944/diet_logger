@@ -1,0 +1,17 @@
+<%= form_with(model: calorie_intake, local: true) do |form| %>
+  <% if calorie_intake.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(calorie_intake.errors.count, "error") %> prohibited this calorie_intake from being saved:</h2>
+
+      <ul>
+        <% calorie_intake.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
