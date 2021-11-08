@@ -10,7 +10,9 @@
       </ul>
     </div>
   <% end %>
-
+  <%= form.text_field :name %>
+  <%= form.date_field :date %>
+  <%= form.number_field :amount %>
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -64,6 +64,6 @@ class CalorieIntakesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def calorie_intake_params
-      params.fetch(:calorie_intake, {})
+      params.require(:calorie_intake).permit(:name, :date, :amount).merge(user_id: current_user.id)
     end
 end
