@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+ユニバーサルデザイン　カラー参考
+https://www.dic-graphics.co.jp/navi/color/ud.html

@@ -1,0 +1,17 @@
+.nav-wapper {
+    display: flex;
+    align-items: center;
+    background-color: $header;
+}
+
+.nav-item {
+    @include linkStyle();
+    margin: 10px;
+}
+
+.nav-logo {
+    font-family: 'arial';
+    font-size:x-large;
+    font-weight:bold;
+    margin-right:auto;
+}

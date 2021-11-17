@@ -1,0 +1,5 @@
+// aタグやlink_toのリンクタグのスタイルを指定(クリック済でも色を紫にしない)
+@mixin linkStyle($color: black) {
+    color:$color;
+    text-decoration:none;
+}
