@@ -3,7 +3,11 @@ class CalorieIntakesController < ApplicationController
 
   # GET /calorie_intakes or /calorie_intakes.json
   def index
-    @calorie_intakes = CalorieIntake.all
+    if user_signed_in?
+      @calorie_intakes = CalorieIntake.where(user_id: current_user.id)
+    else
+      @calorie_intakes = CalorieIntake.none # TODO:仮実装
+    end
   end
 
   # GET /calorie_intakes/1 or /calorie_intakes/1.json
