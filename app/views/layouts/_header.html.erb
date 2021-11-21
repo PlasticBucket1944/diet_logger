@@ -1,0 +1,11 @@
+<header class='nav-wapper'>
+  <% if user_signed_in? %>
+    <%= link_to "DIET LOGGER", root_path, class: 'nav-item nav-logo' %>
+    <h2 class='nav-item'>  <%= current_user.name %> さん </h2>
+    <%= link_to "ログアウト", destroy_user_session_path,  class: 'nav-item', method: :delete %>
+  <% else %>
+    <%= link_to "DIET LOGGER", root_path, class: 'nav-item nav-logo'%>
+    <%= link_to "ログイン", new_user_session_path, class: 'nav-item post' %>
+    <%= link_to "新規登録", new_user_registration_path, class: 'nav-item post' %>
+  <% end %>
+</header>

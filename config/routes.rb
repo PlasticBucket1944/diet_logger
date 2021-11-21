@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'comments#index' # デバッグ用
-  get 'comments/index'
   devise_for :users
+  root 'calorie_intakes#index'
+  resources :calorie_intakes
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
