@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class CalorieIntakesControllerTest < ActionDispatch::IntegrationTest
+=begin コメントアウト
   setup do
     @calorie_intake = calorie_intakes(:one)
   end
@@ -45,4 +46,5 @@ class CalorieIntakesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to calorie_intakes_url
   end
+=end
 end
