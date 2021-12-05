@@ -55,3 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # developer add gem
 gem 'devise'
+gem "simple_calendar", "~> 2.4"
