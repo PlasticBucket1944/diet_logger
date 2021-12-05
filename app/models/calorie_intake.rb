@@ -12,4 +12,9 @@ class CalorieIntake < ApplicationRecord
     def self.by_user_id(user_id)
         where(user_id: user_id)
     end
+
+    # simple_calendar表示用に日付を設定
+    def start_time
+        self.date
+    end
 end

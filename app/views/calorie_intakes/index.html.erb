@@ -2,8 +2,11 @@
 
 <h1>Calorie Intakes</h1>
 
-<%= month_calendar do |date| %>
+<%= month_calendar events: @calorie_intakes do |date, event| %>
   <%= date.day %>
+  <% event.each do |event| %>
+    <%= event.amount %>
+  <% end %>
 <% end %>
 
 <table>
