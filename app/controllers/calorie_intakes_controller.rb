@@ -4,9 +4,9 @@ class CalorieIntakesController < ApplicationController
   # GET /calorie_intakes or /calorie_intakes.json
   def index
     if user_signed_in?
-      @calorie_intakes = CalorieIntake.by_user_id(current_user.id)
+      @calorie = CalorieIntake.select("date, sum(amount) as amount").where(user_id: current_user.id).group("date")
     else
-      @calorie_intakes = CalorieIntake.none # TODO:仮実装
+      @calorie = CalorieIntake.none # TODO:仮実装
     end
   end
 

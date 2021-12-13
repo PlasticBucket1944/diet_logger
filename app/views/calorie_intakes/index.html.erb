@@ -2,10 +2,10 @@
 
 <h1>Calorie Intakes</h1>
 
-<%= month_calendar events: @calorie_intakes do |date, event| %>
+<%= month_calendar events: @calorie do |date, event| %>
   <%= date.day %>
   <% event.each do |event| %>
-    <%= event.amount %>
+    <div class="total-intakes"><%= event.amount %></div>
   <% end %>
 <% end %>
 
@@ -17,16 +17,6 @@
   </thead>
 
   <tbody>
-    <% @calorie_intakes.each do |calorie_intake| %>
-      <tr>
-        <td><%= calorie_intake.name %></td>
-        <td><%= calorie_intake.date %></td>
-        <td><%= calorie_intake.amount %></td>
-        <td><%= link_to 'Show', calorie_intake %></td>
-        <td><%= link_to 'Edit', edit_calorie_intake_path(calorie_intake) %></td>
-        <td><%= link_to 'Destroy', calorie_intake, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
   </tbody>
 </table>
 
