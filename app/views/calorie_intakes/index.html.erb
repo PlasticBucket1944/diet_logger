@@ -3,6 +3,7 @@
 <h1>Calorie Intakes</h1>
 
 <%= month_calendar events: @calorie do |date, event| %>
+  <div class="hidden-date" hidden><%= date %></div>
   <%= date.day %>
   <% event.each do |event| %>
     <div class="total-intakes"><%= event.amount %></div>

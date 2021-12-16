@@ -1,5 +1,6 @@
 $(function() {
     $('.current-month').click(function() {
-        alert("hoge");
+        console.log(this);
     });
+    console.log("fire!");
 });
