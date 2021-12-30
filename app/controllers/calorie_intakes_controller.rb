@@ -3,10 +3,14 @@ class CalorieIntakesController < ApplicationController
 
   # GET /calorie_intakes or /calorie_intakes.json
   def index
-    if user_signed_in?
-      @calorie = CalorieIntake.select("date, sum(amount) as amount").where(user_id: current_user.id).group("date")
-    else
-      @calorie = CalorieIntake.none # TODO:仮実装
+    respond_to do |format|
+      if user_signed_in?
+        format.html { @calorie = CalorieIntake.select("date, sum(amount) as amount").where(user_id: current_user.id).group("date") }
+        format.json { @calories = CalorieIntake.where(user_id: current_user.id, date: "%#{params[:selected_day]}%") }
+      else
+        format.html { @calorie = CalorieIntake.none }
+        format.json {  }
+      end
     end
   end
 
