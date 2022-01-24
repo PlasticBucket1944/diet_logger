@@ -34,7 +34,7 @@ class CalorieIntakesController < ApplicationController
 
     respond_to do |format|
       if @calorie_intake.save
-        format.html { redirect_to @calorie_intake, notice: "Calorie intake was successfully created." }
+        format.html { redirect_to calorie_intakes_url, notice: "Calorie intake was successfully created." }
         format.json { render :show, status: :created, location: @calorie_intake }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -47,7 +47,7 @@ class CalorieIntakesController < ApplicationController
   def update
     respond_to do |format|
       if @calorie_intake.update(calorie_intake_params)
-        format.html { redirect_to @calorie_intake, notice: "Calorie intake was successfully updated." }
+        format.html { redirect_to calorie_intakes_url, notice: "Calorie intake was successfully updated." }
         format.json { render :show, status: :ok, location: @calorie_intake }
       else
         format.html { render :edit, status: :unprocessable_entity }
