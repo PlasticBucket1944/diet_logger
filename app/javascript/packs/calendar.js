@@ -44,7 +44,7 @@ $(function() {
                             <td class="calorie-date" data-value="${ calorie.date }"> ${ calorie.date } </td>
                             <td class="calorie-amount" data-value="${ calorie.amount }"> ${ calorie.amount } </td>
                             <td> <a class="edit-btn" href="">編集</a> </td>
-                            <td> <a class="del-btn" href="">削除</a> </td>
+                            <td> <a class="del-btn" data-confirm="本当に削除してよろしいでしょうか？" rel="nofollow" data-method="delete" href="/calorie_intakes/${ calorie.id }">削除</a> </td>
                         </tr>`;
 
         $("#calories-table").append(html);
