@@ -16,7 +16,7 @@ $(function() {
     // 選択されている日付のカロリーデータを取得し、一覧に追加
     function getAndAddCalorieData() {
         // 選択されている日付を送信
-        const sendData = $('#selected-day .hidden-date').data("value");
+        const sendData = $('#selected-day .hidden-date').data('value');
 
         // 選択された日のカロリーデータを取得し一覧に追加
         $.ajax({
@@ -26,7 +26,7 @@ $(function() {
             dataType: 'json'
         })
         .done(function(calories) {
-            $("#calories-table").empty(); // 一覧をリセット
+            $('#calories-table').empty(); // 一覧をリセット
             calories.forEach(function(calorie){
                 addCalorieData(calorie);
             });
@@ -47,6 +47,6 @@ $(function() {
                             <td> <a class="del-btn" data-confirm="本当に削除してよろしいでしょうか？" rel="nofollow" data-method="delete" href="/calorie_intakes/${ calorie.id }">削除</a> </td>
                         </tr>`;
 
-        $("#calories-table").append(html);
+        $('#calories-table').append(html);
     }
 });
