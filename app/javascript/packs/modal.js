@@ -6,10 +6,13 @@ $(function() {
             $('#update-input').remove();
         };
 
+        // 選択されている日付を取得
+        const selectedDay = $('#selected-day .hidden-date').data('value');
+
         // モーダルフォームをクリア
         $('#update-form').attr('action', '/calorie_intakes');
         $('#calorie_intake_name').val('');
-        $('#calorie_intake_date').val('');
+        $('#calorie_intake_date').val(selectedDay);
         $('#calorie_intake_amount').val('');
 
         $('.js-modal').fadeIn();
