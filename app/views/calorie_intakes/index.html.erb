@@ -36,9 +36,12 @@
     <div class="modal__content">
 
       <%= form_with(model: @calorie_intakes, local: true, id: "update-form") do |form| %>
-        <%= form.text_field :name %>
-        <%= form.date_field :date %>
-        <%= form.number_field :amount %>
+        <%= form.label :name, "名前" %>
+        <%= form.text_field :name, required: true, minlength: 1, maxlength: 40 %>
+        <%= form.label :date, "摂取日" %>
+        <%= form.date_field :date, required: true %>
+        <%= form.label :amount, "カロリー量" %>
+        <%= form.number_field :amount, required: true, in: 0..999999 %>
         <div class="actions">
           <%= form.submit %>
         </div>
