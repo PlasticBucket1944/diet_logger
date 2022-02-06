@@ -24,4 +24,31 @@
 <br>
 <% if user_signed_in? %>
   <%= link_to 'New Calorie Intake', new_calorie_intake_path %>
+  <a class="add-btn" href="">追加</a>
 <% end %>
+
+<div class="modal-content">
+  <div class="content">
+    <a class="js-modal-open" href="">クリックでモーダルを表示</a>
+  </div>
+  <div class="modal js-modal">
+    <div class="modal__bg js-modal-close"></div>
+    <div class="modal__content">
+
+      <%= form_with(model: @calorie_intakes, local: true, id: "update-form") do |form| %>
+        <%= form.label :name, "名前" %>
+        <%= form.text_field :name, required: true, minlength: 1, maxlength: 40 %>
+        <%= form.label :date, "摂取日" %>
+        <%= form.date_field :date, required: true %>
+        <%= form.label :amount, "カロリー量" %>
+        <%= form.number_field :amount, required: true, in: 0..999999 %>
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      <% end %>
+
+      <p>ここにモーダルウィンドウで表示したいコンテンツを入れます。モーダルウィンドウを閉じる場合は下の「閉じる」をクリックするか、背景の黒い部分をクリックしても閉じることができます。</p>
+      <a class="js-modal-close" href="">閉じる</a>
+    </div><!--modal__inner-->
+  </div><!--modal-->
+</div>

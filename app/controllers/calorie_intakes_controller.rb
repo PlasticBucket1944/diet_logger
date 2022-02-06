@@ -5,7 +5,8 @@ class CalorieIntakesController < ApplicationController
   def index
     respond_to do |format|
       if user_signed_in?
-        format.html { @calorie = CalorieIntake.select("date, sum(amount) as amount").where(user_id: current_user.id).group("date") }
+        format.html { @calorie = CalorieIntake.select("date, sum(amount) as amount").where(user_id: current_user.id).group("date") 
+                      @calorie_intakes = CalorieIntake.new }
         format.json { @calories = CalorieIntake.where(user_id: current_user.id, date: "%#{params[:selected_day]}%") }
       else
         format.html { @calorie = CalorieIntake.none }
@@ -33,7 +34,7 @@ class CalorieIntakesController < ApplicationController
 
     respond_to do |format|
       if @calorie_intake.save
-        format.html { redirect_to @calorie_intake, notice: "Calorie intake was successfully created." }
+        format.html { redirect_to calorie_intakes_url, notice: "登録しました" }
         format.json { render :show, status: :created, location: @calorie_intake }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -46,7 +47,7 @@ class CalorieIntakesController < ApplicationController
   def update
     respond_to do |format|
       if @calorie_intake.update(calorie_intake_params)
-        format.html { redirect_to @calorie_intake, notice: "Calorie intake was successfully updated." }
+        format.html { redirect_to calorie_intakes_url, notice: "更新しました" }
         format.json { render :show, status: :ok, location: @calorie_intake }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -59,7 +60,7 @@ class CalorieIntakesController < ApplicationController
   def destroy
     @calorie_intake.destroy
     respond_to do |format|
-      format.html { redirect_to calorie_intakes_url, notice: "Calorie intake was successfully destroyed." }
+      format.html { redirect_to calorie_intakes_url, notice: "削除しました" }
       format.json { head :no_content }
     end
   end
