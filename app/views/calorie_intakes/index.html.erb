@@ -23,7 +23,7 @@
 
 <br>
 <% if user_signed_in? %>
-  <a class="add-btn" href="">追加</a>
+  <div class="add-btn">追加</div>
 <% end %>
 
 <div class="modal-content">
@@ -34,18 +34,24 @@
     <div class="modal__content">
 
       <%= form_with(model: @calorie_intakes, local: true, id: "update-form") do |form| %>
-        <%= form.label :name, "名前" %>
-        <%= form.text_field :name, required: true, minlength: 1, maxlength: 40 %>
-        <%= form.label :date, "摂取日" %>
-        <%= form.date_field :date, required: true %>
-        <%= form.label :amount, "カロリー量" %>
-        <%= form.number_field :amount, required: true, in: 0..999999 %>
+        <div class="name-content">
+          <%= form.label :name, "名前　　　" %>
+          <%= form.text_field :name, required: true, minlength: 1, maxlength: 40 %>
+        </div>
+        <div class="date-content">
+          <%= form.label :date, "摂取日　　" %>
+          <%= form.date_field :date, required: true %>
+        </div>
+        <div class="amount-content">
+          <%= form.label :amount, "カロリー量" %>
+          <%= form.number_field :amount, required: true, in: 0..999999 %>
+        </div>
         <div class="actions">
-          <%= form.submit %>
+          <%= form.submit class:"submit-btn", value:"登録" %>
         </div>
       <% end %>
 
-      <a class="js-modal-close" href="">閉じる</a>
+      <a class="js-modal-close cancel-btn" href="">取消</a>
     </div><!--modal__inner-->
   </div><!--modal-->
 </div>
