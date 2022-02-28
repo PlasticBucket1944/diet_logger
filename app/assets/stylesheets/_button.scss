@@ -1,0 +1,118 @@
+// 追加ボタン
+.add-btn  {
+    @include linkStyle(#cccccc);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 0 5%;
+    padding: 1em 2em;
+    height: 50px;
+    width: 150px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #5cac5a;
+    transition: 0.3s;
+  }
+  .add-btn::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 3px solid #333333;
+    border-right: 3px solid #333333;
+    transform: rotate(45deg);
+  }
+  .add-btn:hover {
+    text-decoration: none;
+    background-color: #99d499;
+  }
+
+ // 編集ボタン
+.edit-btn  {
+  @include linkStyle(#cccccc);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 3em;
+  height: 30px;
+  width: 100px;
+  color: #333;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #5cac5a;
+  transition: 0.3s;
+}
+.edit-btn:hover {
+  text-decoration: none;
+  background-color: #99d499;
+}
+
+// 削除ボタン
+.del-btn  {
+  @include linkStyle(#cccccc);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 3em;
+  height: 30px;
+  width: 100px;
+  color: #333;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #cccccc;
+  transition: 0.3s;
+}
+.del-btn:hover {
+  text-decoration: none;
+  background-color: #bbbbbb;
+}
+
+// 登録ボタン
+.submit-btn  {
+  // submitボタンの初期デザインを無効にする
+  background: none;
+	border: none;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+  @include linkStyle(#cccccc);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1% 0 0 5%;
+  padding: 1em 2em;
+  height: 50px;
+  width: 100px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: #5cac5a;
+  transition: 0.3s;
+}
+.submit-btn:hover {
+  text-decoration: none;
+  background-color: #99d499;
+}
+
+// キャンセルボタン
+.cancel-btn  {
+  @include linkStyle(#cccccc);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1% 0 0 5%;
+  padding: 1em 2em;
+  height: 50px;
+  width: 100px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: #cccccc;
+  transition: 0.3s;
+}
+.cancel-btn:hover {
+  text-decoration: none;
+  background-color: #bbbbbb;
+}
