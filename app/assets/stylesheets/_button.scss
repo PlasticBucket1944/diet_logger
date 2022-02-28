@@ -27,7 +27,47 @@
     background-color: #99d499;
   }
 
-  // 登録ボタン
+ // 編集ボタン
+.edit-btn  {
+  @include linkStyle(#cccccc);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 3em;
+  height: 30px;
+  width: 100px;
+  color: #333;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #5cac5a;
+  transition: 0.3s;
+}
+.edit-btn:hover {
+  text-decoration: none;
+  background-color: #99d499;
+}
+
+// 削除ボタン
+.del-btn  {
+  @include linkStyle(#cccccc);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 3em;
+  height: 30px;
+  width: 100px;
+  color: #333;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #cccccc;
+  transition: 0.3s;
+}
+.del-btn:hover {
+  text-decoration: none;
+  background-color: #bbbbbb;
+}
+
+// 登録ボタン
 .submit-btn  {
   // submitボタンの初期デザインを無効にする
   background: none;

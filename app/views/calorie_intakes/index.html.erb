@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Calorie Intakes</h1>
+<h4 id="notice"><%= notice %></h4>
 
 <%= month_calendar events: @calorie do |date, event| %>
   <div class="hidden-date" data-value="<%= date %>" hidden></div>
@@ -12,9 +10,6 @@
 
 <table>
   <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
   </thead>
 
   <tbody id="calories-table">
