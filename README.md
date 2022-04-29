@@ -1,27 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+日ごとのカロリー量を登録できる簡単なアプリケーション
 
-Things you may want to cover:
+ruby 2.6.6
 
-* Ruby version
+Rails 6.0.4.1
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-ユニバーサルデザイン　カラー参考
-https://www.dic-graphics.co.jp/navi/color/ud.html
+mysql  Ver 14.14 Distrib 5.7.37
